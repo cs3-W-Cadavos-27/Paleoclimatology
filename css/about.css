@@ -1,0 +1,240 @@
+    /*===============================  Media about__paleo  ====================*/
+    .about__paleo {
+        margin-top: 3rem
+    }
+
+    .about__paleo .about__paleo_container {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        gap: 5rem;
+    }
+
+    .about__paleo .about__paleo_right>p {
+        margin: 1.6rem 0 2.5rem
+    }
+
+    .about__paleo .paleo__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+
+    }
+
+    .about__paleo .paleo__cards .paleo__card {
+        background: var(--color--bg1);
+        padding: 1.6rem;
+        border-radius: 1rem;
+        text-align: center;
+        transition: var(---transition);
+    }
+
+    .about__paleo .paleo__card:hover {
+        background: var(--color--bg2);
+        box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.3)
+    }
+
+    .about__paleo .paleo__card .paleo__icon {
+        background: var(--color-danger);
+        padding: 0.6rem;
+        margin-bottom: 2rem;
+        display: inline-block;
+        border-radius: 1rem;
+        font-size: 2rem
+    }
+
+
+
+    .about__paleo .paleo__card:nth-child(2) .paleo__icon {
+        background-color: var(--color-success)
+    }
+
+    .about__paleo .paleo__card:nth-child(3) .paleo__icon {
+        background-color: var(--color-warning)
+    }
+
+    .about__paleo .paleo__card p {
+        margin-top: 1rem;
+    }
+
+
+    /*===============================  Media rea  ====================*/
+
+    .rea {
+        background: var(--color--bg1);
+        box-shadow: inset 0 0 3rem rgba(0, 0, 0, 0.5)
+    }
+
+    .rea .team__container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+
+    .rea .team__container .reason {
+        background-color: var(--color--bg2);
+        padding: 2rem;
+        border: 1px solid transparent;
+        transition: var(---transition);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .rea .team__container .reason:hover {
+        background: transparent;
+        border-color: 1px solid var(--color-primary)
+    }
+
+    .rea .team__container .reason .reason-image img {
+        filter: saturate(0);
+    }
+
+    .rea .team__container .reason:hover img {
+        filter: saturate(1);
+    }
+
+    .rea .team__container .reason .reason-info * {
+
+        text-align: center;
+        margin-top: 1.4rem
+    }
+
+    .rea .team__container .reason .reason-info p {
+        color: rgba(255, 255, 255, 0.574)
+    }
+
+    .rea .team__container .son-socials {
+        position: absolute;
+        top: 50%;
+        right: -100%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        background-color: var(--color-primary);
+        border-radius: 1rem 0 0 1rem;
+        box-shadow: -2rem 0 2rem rgba(0, 0, 0, 0.3);
+        transition: var(---transition);
+
+    }
+
+    .rea .team__container .reason:hover .son-socials {
+        right: 0;
+    }
+
+    .rea .team__container .son-socials a {
+        padding: 1rem;
+    }
+
+    /*===============================  Media Query rea  ====================*/
+
+    @media screen and (max-width:600px) {
+        .about__paleo .paleo__cards {
+            grid-template-columns: 1fr 1fr;
+            gap: 0.7rem;
+        }
+
+        .rea .team__container {
+            grid-template-columns: 1fr 1fr;
+            gap: 0.7rem;
+
+        }
+
+        .rea .team__container .reason {
+            padding: 0;
+        }
+
+        .rea .team__container .reason .reason-info p {
+            margin-bottom: 1.5rem;
+        }
+
+    }
+
+    /*===============================  Paleoclimatologist  ====================*/
+
+.wendz {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+::selection{
+  color: #000;
+  background: #03045e;
+}
+.wrapper{
+  height: 400px;
+  width: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+ perspective: 1000px;
+    margin-top: 60px;
+    
+}
+.wrapper .card{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  background: #0096c7;
+  border-radius: 10px;
+  transform: translateY(0deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+  transition: transform 0.7s cubic-bezier(0.4,0.2,0.2,1);
+}
+.wrapper:hover > .front-face{
+  transform: rotateY(-180deg);
+}
+.wrapper .card img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.wrapper .back-face{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  transform: rotateY(180deg);
+}
+.wrapper:hover > .back-face{
+  transform: rotateY(0deg);
+}
+.wrapper .back-face img{
+  height: 150px;
+  width: 150px;
+  padding: 5px;
+  border-radius: 50%;
+  background: #fff;
+}
+.wrapper .back-face .info{
+  text-align: center;
+}
+.back-face .info .title{
+  font-size: 30px;
+  font-weight: 500;
+}
+.back-face ul{
+  display: flex;
+}
+.back-face ul a{
+  display: block;
+  height: 40px;
+  width: 40px;
+  color: #0096c7;
+  text-align: center;
+  margin: 0 5px;
+  line-height: 38px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: #fff;
+  transition: all 0.5s ease;
+}
+.back-face ul a:hover{
+  color: #03045e;
+  border-color: #03045e;
+  background: linear-gradient(375deg, transparent, transparent);
+}
